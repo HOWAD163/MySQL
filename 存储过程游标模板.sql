@@ -1,6 +1,8 @@
 -- 将语句的结束符号从分号; 临时改为两个$$(可以是自定义)
 delimiter $$
 
+DROP PROCEDURE IF EXISTS procedure_test;
+
 CREATE DEFINER = `root` @`localhost` PROCEDURE `procedure_test` ( IN p_tag VARCHAR ( 255 ) ) COMMENT '游标模板' BEGIN
 
 DECLARE
