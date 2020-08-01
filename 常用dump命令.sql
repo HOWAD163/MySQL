@@ -10,10 +10,10 @@ mysqldump -u用户名 -p密码 -hIP -P端口 -d --single-transaction 数据库�
 mysqldump -u用户名 -p密码 -hIP -P端口 --single-transaction 数据库名 表名 > /mnt9/casecheck_bak/backup.sql;
 
 -- 导出数据库下全部存储过程和自定义函数
-mysqldump -uslave_jufa_0728 -pCJvH3dUMOvsn -h192.168.0.234 -P3312 -ntd -R --single-transaction pingcha > /mnt9/casecheck/backup.sql;
+mysqldump -u用户名 -p密码 -hIP -P端口 -ntd -R --single-transaction pingcha > /mnt9/casecheck/backup.sql;
 
 -- 按条件[id = 1]导出表的数据
-mysqldump -uroot -proot --host=127.0.0.1 --where='id=1' 数据库名 表名 > /mnt9/casecheck/backup.sql;
+mysqldump -u用户名 -p密码 -hIP -P端口 --where='id=1' 数据库名 表名 > /mnt9/casecheck/backup.sql;
 
 
 1. 必选参数：
@@ -48,11 +48,11 @@ mysqldump -uroot -proot --host=127.0.0.1 --where='id=1' 数据库名 表名 > /m
 --routines, -R
 
 3. 恢复备份：
-mysql -u用户名 -p密码 databse < /mnt9/casecheck/backup.sql;
+mysql -u用户名 -p密码 -hIP -P端口 databse < /mnt9/casecheck/backup.sql;
 
 或
 
-mysql -u用户名 -p密码
+-u用户名 -p密码 -hIP -P端口
 
 use databse;
 
