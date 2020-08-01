@@ -39,5 +39,5 @@ CLOSE l_cursor;
 
 END$$
 
-# 将语句的结束符号恢复为分号
+-- 将语句的结束符号恢复为分号
 delimiter ;
