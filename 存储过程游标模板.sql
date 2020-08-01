@@ -39,7 +39,7 @@ UNTIL done
 END REPEAT;
 CLOSE l_cursor;
 
-END$$
+END $$
 
 -- 将语句的结束符号恢复为分号
 delimiter ;
