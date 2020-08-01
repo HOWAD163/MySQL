@@ -1,4 +1,3 @@
-```mysql
 -- INTO OUTFILE 后为于服务器中存放位置及导出文件名
 SELECT
     user_name 
@@ -8,5 +7,3 @@ FROM
     userinfo 
 WHERE
     id > 1;
-```
-
