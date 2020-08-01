@@ -12,21 +12,21 @@ SELECT max( id ), min( id ) INTO l_max_id, l_min_id FROM userinfo;
 
 WHILE l_min_id <= l_max_id DO
 
-	SELECT l_maxid, l_min_id;
+    SELECT l_maxid, l_min_id;
 	
-	INSERT INTO temp_userinfo ( college, age, `name` ) 
-	SELECT
-		college,
-		age,
-		`name` 
-	FROM
-		userinfo
-	WHERE
-		id >= l_min_id 
-		AND id < ( l_min_id + l_step ) 
-	ON DUPLICATE KEY UPDATE college = VALUES( college ), age = age + VALUES ( age ), `name` = VALUES ( `name` );
+    INSERT INTO temp_userinfo ( college, age, `name` ) 
+    SELECT
+        college,
+        age,
+        `name` 
+    FROM
+        userinfo
+    WHERE
+        id >= l_min_id 
+        AND id < ( l_min_id + l_step ) 
+    ON DUPLICATE KEY UPDATE college = VALUES( college ), age = age + VALUES ( age ), `name` = VALUES ( `name` );
 	
-	SET l_min_id = l_min_id + l_step;
+    SET l_min_id = l_min_id + l_step;
 	
 END WHILE;
 
