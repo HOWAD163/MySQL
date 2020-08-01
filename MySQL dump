@@ -1,0 +1,2 @@
+-- 导出单表
+mysqldump -u -p -h -P  数据库名 表名 > /mnt9/casecheck_bak/casecheck.sql
