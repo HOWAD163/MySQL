@@ -52,8 +52,6 @@ mysql -u用户名 -p密码 -hIP -P端口 databse < /mnt9/casecheck/backup.sql;
 
 或
 
--u用户名 -p密码 -hIP -P端口
-
+mysql -u用户名 -p密码 -hIP -P端口
 use databse;
-
 source /mnt9/casecheck/backup.sql;
