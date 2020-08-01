@@ -4,33 +4,32 @@ delimiter $$
 CREATE DEFINER = `root` @`localhost` PROCEDURE `procedure_test` ( IN p_tag VARCHAR ( 255 ) ) COMMENT '游标模板' BEGIN
 
 DECLARE
-	p_court_id INT DEFAULT 0;
+    p_court_id INT DEFAULT 0;
 	
 DECLARE
-	done INT DEFAULT 0;
+    done INT DEFAULT 0;
 DECLARE
-	l_cursor CURSOR FOR SELECT
-	court_id 
+    l_cursor CURSOR FOR SELECT
+    court_id 
 FROM
-	courts 
+    courts 
 WHERE
-	tag IN ( p_tag ) 
+    tag IN ( p_tag ) 
 ORDER BY
-	court_id;
+    court_id;
 	
 DECLARE
-	CONTINUE HANDLER FOR SQLSTATE '02000' 
-	SET done = 1;
+    CONTINUE HANDLER FOR SQLSTATE '02000' 
+    SET done = 1;
 	
 OPEN l_cursor;
 REPEAT
-	FETCH l_cursor INTO p_court_id;
+    FETCH l_cursor INTO p_court_id;
 IF
-	NOT done THEN
+    NOT done THEN
 	
 	
-SELECT
-	p_court_id;
+SELECT p_court_id;
 
 
 END IF;
